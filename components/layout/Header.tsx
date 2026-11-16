@@ -21,12 +21,6 @@ export function Header() {
           >
             Device Catalog
           </Link>
-          <Link
-            href="#eligibility"
-            className="transition-colors hover:text-slate-900 hover:underline underline-offset-4"
-          >
-            Repayment Terms
-          </Link>
         </nav>
 
         <div className="flex items-center">
