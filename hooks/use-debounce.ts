@@ -1,0 +1,20 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { SEARCH_DEBOUNCE_MS } from '@/constants';
+
+export function useDebounce<T>(value: T, delayMs: number = SEARCH_DEBOUNCE_MS): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delayMs);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delayMs]);
+
+  return debouncedValue;
+}
