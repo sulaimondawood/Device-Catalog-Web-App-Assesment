@@ -18,7 +18,7 @@ import type {
   DeviceCategoryFilter,
   DeviceSortOption,
 } from '@/types/device';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 const CORE_DEVICE_CATEGORY_SET = new Set<string>(CORE_DEVICE_CATEGORIES);
 
@@ -113,13 +113,6 @@ export function DeviceCatalog() {
       block: 'start',
     });
   };
-
-
-  useEffect(() => {
-    if (currentPage > totalPages) {
-      setCurrentPage(totalPages);
-    }
-  }, [currentPage, totalPages]);
 
   return (
     <section
